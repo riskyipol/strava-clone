@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Strava Clone</title>
+    <meta name="description" content="GPS activity tracker like Strava">
+    <meta name="theme-color" content="#e74c3c">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>🏃 Strava Clone</h1>
+            <button id="menuBtn" class="icon-btn">☰</button>
+        </header>
+
+        <div class="content">
+            <div class="status-card">
+                <div id="status" class="status-text">Ready to track</div>
+                <div id="timer" class="timer">00:00:00</div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-label">Distance</span>
+                        <span id="distance" class="stat-value">0.00 km</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Speed</span>
+                        <span id="speed" class="stat-value">0 km/h</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Duration</span>
+                        <span id="duration" class="stat-value">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+
+            <div class="controls">
+                <button id="startBtn" class="btn btn-primary">Start</button>
+                <button id="pauseBtn" class="btn btn-warning" disabled>Pause</button>
+                <button id="stopBtn" class="btn btn-danger" disabled>Stop</button>
+            </div>
+
+            <div class="history-section">
+                <h2>History</h2>
+                <div id="historyList" class="history-list">
+                    <div class="no-history">No activities yet</div>
+                </div>
+            </div>
+        </div>
+
+        <nav id="menu" class="sidebar">
+            <button id="closeMenu" class="close-btn">✕</button>
+            <a href="#" class="menu-item active">Dashboard</a>
+            <a href="#" class="menu-item">History</a>
+            <a href="#" class="menu-item">About</a>
+        </nav>
+
+        <div id="overlay" class="overlay"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/tracker.js"></script>
+    <script src="js/sync.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
